@@ -1,8 +1,13 @@
 package messages;
 
-import java.util.ArrayList;
+import java.util.List;
 
-public class Input extends ArrayList<String> {
-	private static final long serialVersionUID = -8135531028613672055L;
-
+public class Input {
+	private List<String> words;
+	public Input(List<String> words) {
+		this.words = words;
+	}
+	public List<String> getWords() {
+		return this.words;
+	}
 }

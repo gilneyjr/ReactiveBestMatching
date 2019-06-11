@@ -1,7 +1,13 @@
 package messages;
 
-import java.util.ArrayList;
+import java.util.List;
 
-public class Dictionary extends ArrayList<String> {
-	private static final long serialVersionUID = 4538108578322130992L;
+public class Dictionary {
+	private List<String> words;
+	public Dictionary(List<String> words) {
+		this.words = words;
+	}
+	public List<String> getWords() {
+		return this.words;
+	}
 }
