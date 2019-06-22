@@ -1,22 +1,26 @@
 package actors;
 
 import akka.actor.AbstractActor;
-import messages.Distance;
+import akka.actor.Props;
+import messages.Similarity;
 import messages.Pair;
 
-public class CalculateDistanceActor extends AbstractActor {
+public class CalculateSimilarityActor extends AbstractActor {
 	@Override
 	public Receive createReceive() {
 		return receiveBuilder()
-				.match(Pair.class, pair -> getSender().tell(calculateDistance(pair.getDicWord(), pair.getInputWord()), getSelf()))
+				.match(Pair.class, pair -> {
+					getSender().tell(calculateSimilarity(pair.getDicWord(), pair.getInputWord()), getSelf());
+				})
 				.build();
 	}
 	
-	private Distance calculateDistance(String dicWord, String inputWord) {
-		return new Distance(
+	private Similarity calculateSimilarity(String dicWord, String inputWord) {
+		return new Similarity(
 				dicWord, 
 				inputWord,
-				similarityDistance(dicWord, inputWord));
+				similarityDistance(dicWord, inputWord)
+		);
 	}
 	
 	private int levenshtein(int[][] memo, String str1, String str2, int i, int j) {
@@ -40,5 +44,9 @@ public class CalculateDistanceActor extends AbstractActor {
 			for (int j = 0; j < str2.length(); j++)
 				memo[i][j] = -1;
 		return levenshtein(memo, str1, str2, str1.length(), str2.length());
+	}
+	
+	public static Props props() {
+		return Props.create(CalculateSimilarityActor.class);
 	}
 }

@@ -1,10 +1,10 @@
 package messages;
 
-public class Distance {
+public class Similarity {
 	private String dic;
 	private String input;
 	private int dist;
-	public Distance(String dic, String input, int dist) {
+	public Similarity(String dic, String input, int dist) {
 		super();
 		this.dic = dic;
 		this.input = input;
