@@ -1,22 +1,21 @@
 package messages;
 
 public class Similarity {
-	private String dic;
-	private String input;
-	private int dist;
-	public Similarity(String dic, String input, int dist) {
-		super();
-		this.dic = dic;
-		this.input = input;
-		this.dist = dist;
+	private String inputWord;
+	private String dicWord;
+	private int similarity;
+	public Similarity(String inputWord, String dicWord, int similarity) {
+		this.inputWord = inputWord;
+		this.dicWord = dicWord;
+		this.similarity = similarity;
 	}
-	public String getDic() {
-		return dic;
+	public String getInputWord() {
+		return inputWord;
 	}
-	public String getInput() {
-		return input;
+	public String getDicWord() {
+		return dicWord;
 	}
-	public int getDist() {
-		return this.dist;
+	public int getSimilarity() {
+		return similarity;
 	}
 }

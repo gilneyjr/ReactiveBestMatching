@@ -17,8 +17,8 @@ public class CalculateSimilarityActor extends AbstractActor {
 	
 	private Similarity calculateSimilarity(String dicWord, String inputWord) {
 		return new Similarity(
-				dicWord, 
-				inputWord,
+				inputWord, 
+				dicWord,
 				similarityDistance(dicWord, inputWord)
 		);
 	}

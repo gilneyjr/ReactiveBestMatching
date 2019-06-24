@@ -1,17 +1,11 @@
 package messages;
 
-import java.util.List;
-
 public class Input {
-	private List<String> words;
-	private int qnt;
-	public Input(List<String> words, int qnt) {
-		this.words = words;
+	private String inputWord;
+	public Input(String inputWord) {
+		this.inputWord = inputWord;
 	}
-	public List<String> getWords() {
-		return this.words;
-	}
-	public int getQnt() {
-		return this.qnt;
+	public String getInputWord() {
+		return this.inputWord;
 	}
 }

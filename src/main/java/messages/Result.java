@@ -2,17 +2,24 @@ package messages;
 
 import java.util.List;
 
+import akka.actor.ActorRef;
+
 public class Result {
 	private String inputWord;
-	private List<String> words;
-	public Result(String inputWord, List<String> words) {
+	private List<String> output;
+	private ActorRef sender;
+	public Result(String inputWord, List<String> output, ActorRef sender) {
 		this.inputWord = inputWord;
-		this.words = words;
+		this.output = output;
+		this.sender = sender;
 	}
 	public String getInputWord() {
-		return this.inputWord;
+		return inputWord;
 	}
-	public List<String> getWords() {
-		return words;
+	public List<String> getOutput() {
+		return output;
+	}
+	public ActorRef getSender() {
+		return sender;
 	}
 }

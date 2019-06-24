@@ -10,6 +10,21 @@
     </properties>
 
     <dependencies>
+    	
+    	<!-- Dependências do Cassandra (INÍCIO) -->
+    	<dependency>
+		    <groupId>com.datastax.cassandra</groupId>
+		    <artifactId>cassandra-driver-core</artifactId>
+		    <version>3.6.0</version>
+		</dependency>
+
+		<dependency>
+		    <groupId>com.datastax.cassandra</groupId>
+		    <artifactId>cassandra-driver-mapping</artifactId>
+		    <version>3.6.0</version>
+		</dependency>
+		<!-- Dependências do Cassandra (FIM) -->
+		    	
         <dependency>
             <groupId>com.typesafe.akka</groupId>
             <artifactId>akka-actor_2.12</artifactId>
