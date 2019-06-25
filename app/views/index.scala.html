@@ -1,0 +1,14 @@
+@(form : Form[model.form.FormData])
+
+@main("BestMatching"){
+	<div class="center">
+		<label>Enter a word</label>
+		@helper.form(routes.HomeController.getResult, 'id -> "myForm") {
+			<input type="text" id="data" name="data" value="">
+			<div class="buttons">
+				<input type="submit" value="Send"></input>
+			</div>
+		}
+
+	</div>
+}

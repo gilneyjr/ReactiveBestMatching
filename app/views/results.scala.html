@@ -1,0 +1,22 @@
+@(title : String, list : List[String], duration: String)
+
+@main("BestMatching - Results"){
+	<div class="center">
+		<label>@title</label>
+		<table>
+		@for(e <- list){
+			<tr>
+				<td>@e</td>
+			</tr>
+		}
+		</table>
+		<div class="buttons">
+			<form action="/" method="get">
+				<input type="submit" value="Back">
+			</form>
+		</div>
+		<div class="buttons">
+			<label class="tiny">@duration</label>
+		</div>
+	</div>
+}
